@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#081116" />
+    <meta
+      name="description"
+      content="A neon space survival roguelike. Hold the line, collect void energy, and survive as long as you can."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Void Survivors</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="masthead">
+        <a class="wordmark" href="#top" aria-label="Void Survivors home">
+          <span class="wordmark-mark" aria-hidden="true">V</span>
+          <span>VOID<span class="wordmark-light">/</span>SURVIVORS</span>
+        </a>
+        <span class="signal"><span class="signal-dot"></span> SECTOR 09</span>
+      </header>
+      <section class="game-layout" id="top" aria-label="Void Survivors game">
+        <div class="game-heading">
+          <div>
+            <p class="eyebrow">CONTAINMENT BREACH // 01</p>
+            <h1>THE VOID IS <span>HUNGRY.</span></h1>
+          </div>
+          <p class="heading-note">One ship. No backup.<br />Make every second count.</p>
+        </div>
+        <div
+          id="arena-stage"
+          class="arena-stage"
+          aria-label="Void Survivors game canvas"
+        ></div>
+        <footer class="game-footer">
+          <p><span class="footer-key">OBJECTIVE</span> SURVIVE THE BREACH</p>
+          <p><span class="footer-key">WEAPON</span> AUTO-TARGET / MK-I</p>
+          <p class="footer-status">
+            <span class="status-dot"></span> FLIGHT SYSTEMS NOMINAL
+          </p>
+        </footer>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+:root {
+  font-family: 'Manrope', sans-serif;
+  color: #e7f0eb;
+  background: #081116;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --void: #081116;
+  --line: rgba(169, 210, 197, 0.15);
+  --muted: #78908b;
+  --mint: #8fffd4;
+  --mono: 'DM Mono', monospace;
+  --display: 'Barlow Condensed', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 0;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 82% 8%, rgba(30, 85, 81, 0.14), transparent 38%),
+    linear-gradient(135deg, rgba(22, 46, 49, 0.16) 0, transparent 42%), var(--void);
+}
+
+.app-shell {
+  width: min(1320px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.masthead {
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: #f1f7f3;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.wordmark-mark {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(143, 255, 212, 0.55);
+  color: var(--mint);
+  font-family: var(--display);
+  font-size: 19px;
+  transform: skew(-7deg);
+}
+
+.wordmark-light {
+  color: var(--mint);
+}
+
+.signal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+}
+
+.signal-dot,
+.status-dot {
+  width: 6px;
+  height: 6px;
+  display: inline-block;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 10px rgba(143, 255, 212, 0.75);
+}
+
+.game-layout {
+  padding: 24px 0 18px;
+}
+
+.game-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.eyebrow,
+.footer-key {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9px;
+}
+
+.game-heading h1 {
+  margin: 7px 0 0;
+  color: #e8f2ed;
+  font-family: var(--display);
+  font-size: clamp(34px, 5vw, 50px);
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.game-heading h1 span {
+  color: var(--mint);
+}
+
+.heading-note {
+  margin: 0 0 1px;
+  color: #9caaa5;
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: right;
+}
+
+.arena-stage {
+  position: relative;
+  width: min(100%, 1200px, calc((100vh - 175px) * 5 / 3));
+  aspect-ratio: 5 / 3;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(143, 255, 212, 0.22);
+  background: #081118;
+  box-shadow: 0 24px 75px rgba(0, 0, 0, 0.28);
+  isolation: isolate;
+}
+
+.arena-stage canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+.game-footer {
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  color: #c0cec8;
+  font-family: var(--mono);
+  font-size: 8px;
+}
+
+.game-footer p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+}
+
+.footer-key {
+  color: #617771;
+  font-size: 8px;
+}
+
+.footer-status {
+  color: var(--mint);
+}
+
+.footer-status .status-dot {
+  width: 5px;
+  height: 5px;
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    width: min(100% - 24px, 580px);
+  }
+
+  .masthead {
+    height: 60px;
+  }
+
+  .game-layout {
+    padding-top: 18px;
+  }
+
+  .game-heading {
+    margin-bottom: 12px;
+  }
+
+  .game-heading h1 {
+    font-size: clamp(26px, 6.3vw, 38px);
+  }
+
+  .heading-note {
+    max-width: 104px;
+    font-size: 9px;
+  }
+
+  .game-footer {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px 18px;
+    padding: 10px 0;
+    font-size: 7px;
+  }
+
+  .footer-status {
+    margin-left: auto !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .eyebrow {
+    font-size: 7px;
+  }
+
+  .game-heading h1 {
+    font-size: 27px;
+  }
+
+  .heading-note {
+    max-width: 88px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
